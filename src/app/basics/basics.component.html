@@ -1,0 +1,10 @@
+<div class="container">
+    <p>{{code}}</p>
+    <input type="input" placeholder="Enter text" #tex>
+    <button type="button" [disabled]="disable" (click)="show()">Click</button>
+    <p>{{getVal}}</p>
+    <hr>
+    <app-basicschild #basicschild [basicscode]="code" (sendData)="getData($event)">
+        <p #bas>this is coming from parent</p>
+    </app-basicschild>
+</div>

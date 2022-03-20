@@ -1,0 +1,24 @@
+
+
+
+
+
+
+<table id="customers">
+        <h4>List of products and details</h4>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Brand</th>
+    <th>Catagory</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{product.title}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.brand}}</td>
+    <td>{{product.category}}</td>
+  </tr>
+</table>
+
+
+
