@@ -32,6 +32,8 @@ export class AppComponent implements OnInit{
         console.log(this.products);
         this.store.dispatch(new Products(this.products))
       })
+
+      localStorage.removeItem('arrLocal')
     }
     
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BasicschildComponent } from './basicschild/basicschild.component';
+import { CommonService } from 'src/app/common.service';
 
 @Component({
   selector: 'app-basics',
@@ -14,12 +15,21 @@ export class BasicsComponent implements OnInit {
 
   getVal:string;
 
+  arr:number[]=[];
+
+  valProperty:string
+
   @ViewChild('basicschild') text:BasicschildComponent;
 
 
-  constructor() { }
+  constructor(private comm:CommonService) { }
 
   ngOnInit(): void {
+
+    this.comm.sub$.subscribe((res:any)=>{
+      this.arr = res;
+    })
+
   }
 
   show(){

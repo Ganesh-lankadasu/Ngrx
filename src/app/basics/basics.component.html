@@ -3,6 +3,12 @@
     <input type="input" placeholder="Enter text" #tex>
     <button type="button" [disabled]="disable" (click)="show()">Click</button>
     <p>{{getVal}}</p>
+
+    <div *ngFor="let ar of arr">
+        <li>{{ar}}</li>
+    </div>
+
+
     <hr>
     <app-basicschild #basicschild [basicscode]="code" (sendData)="getData($event)">
         <p #bas>this is coming from parent</p>
