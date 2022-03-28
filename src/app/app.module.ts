@@ -6,7 +6,8 @@ import {StoreModule, Store} from '@ngrx/store'
 import { reducers } from 'src/app/app.reducers';
 import { CommonService } from 'src/app/common.service';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component'
 
 
 // const emp={
@@ -27,7 +28,8 @@ export const person = new InjectionToken(data)
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
     ],
   imports: [
     BrowserModule,
