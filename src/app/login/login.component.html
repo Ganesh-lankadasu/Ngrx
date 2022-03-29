@@ -1,8 +1,25 @@
 <div class="container">
     <p>Enter the form</p>
-    <label>Enter username</label>
+    <label for="Username">Enter username</label>
     <input type="text" class="form-control" placeholder="enter name" autocomplete="new-name">
-    <label>Enter Password</label>
+    <label for="Password">Enter Password</label>
     <input type="password" class="form-control" placeholder="enter password" autocomplete="new-password">
+    <label>Radios</label>
+    <div class="Radio-container">
+    <input type="radio" id="option1" name="option">
+      <label for="option1" style="margin-left:4px">Option 1</label>
+    <br>
+    <input type="radio" id="option2" name="option">
+    <label for="option2" style="margin-left:4px">Option 2</label>
+    <br>
+</div>
+
+<div class="Checkbox-container">
+    <input type="checkbox" id="check1" name="check">
+    <label for="check1" style="margin-left:4px">Hide on click</label>
+    <br>
+    <input type="checkbox" id="check2" name="check">
+    <label for="check2" style="margin-left:4px">Show toast with icon</label>
+</div>
     <button type="button" class="btn btn-primary">Submit</button>
 </div>
