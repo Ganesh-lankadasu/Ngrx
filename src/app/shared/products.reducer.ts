@@ -45,6 +45,8 @@ export function productsreducer(state=initialstate,action:fromProducts.productsA
         const prro = [...state.products];
         prro.splice(productindex,1,prod);
 
+        
+
 
         return {
             ...state,
