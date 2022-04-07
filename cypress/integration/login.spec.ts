@@ -58,10 +58,17 @@ describe('Login page',()=>{
         })
     })
 
-    it.only('Check boxes',()=>{
+    it('Check boxes',()=>{
         cy.visit('/')
         cy.get('[type="checkbox"]').eq(0).uncheck();
         cy.get('[type="checkbox"]').eq(1).check();
+    })
+
+    it.only('Tables',()=>{
+        cy.visit('/');
+        //cy.contains('Tables info').find('tr').eq(2).find('td').eq(0).should('contain','Centro comercial Moctezuma')
+        //cy.get('table').find('tr').eq(2).find('td').eq(0).should('contain','Centro comercial Moctezuma');
+        cy.get('table tr').eq(2).find('td').eq(0).should('contain','Centro comercial Moctezuma');
     })
 
 })

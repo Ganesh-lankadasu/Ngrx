@@ -3,7 +3,37 @@
 
 
 
+<div class="main-container">
 
+<div class="containere">
+  <h4>Add Products</h4>
+
+  <form [formGroup]="formproducts">
+    <div class="form-group">
+      <label>Product</label>
+      <input type="input" class="form-control" formControlName="title">
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="input" class="form-control" formControlName="price">
+    </div>
+
+    <div class="form-group">
+      <label>Brand</label>
+      <input type="input" class="form-control" formControlName="brand">
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <input type="input" class="form-control" formControlName="category">
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="addproduct()">Add Product</button>
+  </form>
+</div>
+
+<div class="show-container">
 <table id="customers">
         <h4>List of products and details</h4>
   <tr>
@@ -17,8 +47,15 @@
     <td>{{product.price}}</td>
     <td>{{product.brand}}</td>
     <td>{{product.category}}</td>
+    <td style="color: red;
+    cursor: pointer;" (click)="delete(product.title)">Delete</td>
+    <td style="color: blue;
+    cursor: pointer;" (click)="edit(product)">Edit</td>
   </tr>
 </table>
+
+</div>
+</div>
 
 
 

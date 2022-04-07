@@ -7,7 +7,9 @@ import { reducers } from 'src/app/app.reducers';
 import { CommonService } from 'src/app/common.service';
 
 import {HttpClientModule} from '@angular/common/http';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { ProductsModule } from './products/products.module';
+
 
 
 // const emp={
@@ -35,7 +37,9 @@ export const person = new InjectionToken(data)
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
-    HttpClientModule
+    HttpClientModule,
+    ProductsModule
+
   ],
   providers: [{provide:CommonService,useClass:CommonService},
   {provide:person,useValue:data},

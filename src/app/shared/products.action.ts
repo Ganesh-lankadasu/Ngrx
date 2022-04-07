@@ -4,6 +4,12 @@ import { Product } from 'src/app/product.model';
 
 export const ADDPRODUCTS = '[products] store the products';
 
+export const DELETE = 'delete the products';
+
+export const UPDATEPRODUCT ='Updating the product'
+
+
+
 export class Products implements Action {
     readonly type = ADDPRODUCTS;
 
@@ -12,5 +18,20 @@ export class Products implements Action {
     }
 }
 
-export type productsAction = Products;
+export class Deleteproducts implements Action {
+    readonly type = DELETE;
+
+    constructor(public payload){
+
+    }
+}
+
+export class Updateproduct implements Action {
+    readonly type = UPDATEPRODUCT;
+
+    constructor(public payload:{title,product}){}
+}
+
+
+export type productsAction = Products | Deleteproducts | Updateproduct
 

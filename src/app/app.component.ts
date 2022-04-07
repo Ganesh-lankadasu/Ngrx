@@ -18,7 +18,9 @@ import { Products } from 'src/app/shared/products.action';
 })
 export class AppComponent implements OnInit{
 
-  products:Product[]=[]
+  products:Product[];
+  subpro;
+  subproarray=[];
   
   constructor(private store:Store<fromRoot.State>,
   private comm:CommonService){
@@ -27,10 +29,19 @@ export class AppComponent implements OnInit{
 
     ngOnInit(){
 
+  
+
       this.comm.getProducts().subscribe((res)=>{
         this.products = res['products'];
-        console.log(this.products);
-        this.store.dispatch(new Products(this.products))
+        this.products.forEach((product)=>{
+          this.subpro = {
+            title:product.title,
+            price:product.price,
+            brand:product.brand,
+            category:product.category
+          }
+          this.store.dispatch(new Products(this.subpro));
+        });
       })
 
       localStorage.removeItem('arrLocal')

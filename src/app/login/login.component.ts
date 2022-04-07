@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonService } from 'src/app/common.service';
+import { Product } from 'src/app/product.model';
+import { Store } from '../../../node_modules/@ngrx/store';
+import { Products } from '../shared/products.action';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  products:Product[]=[];
+
+  constructor(private router:Router,
+  private comm:CommonService,
+  private store:Store
+) { }
 
   ngOnInit(): void {
   }
